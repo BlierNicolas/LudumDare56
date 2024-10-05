@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 26253170}
   - component: {fileID: 26253169}
   m_Layer: 5
-  m_Name: UIDocument (1)
+  m_Name: MainMenuUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,12 +334,12 @@ GameObject:
   - component: {fileID: 1473451649}
   - component: {fileID: 1473451651}
   m_Layer: 5
-  m_Name: UIDocument
+  m_Name: InGameUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1473451649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +384,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723d6e772d8f12a4790801f8169b86a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1703332326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1703332329}
+  - component: {fileID: 1703332328}
+  - component: {fileID: 1703332327}
+  m_Layer: 5
+  m_Name: PauseMenuUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1703332327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703332326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bc28e99576b7846a696069d4f5ae19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1703332328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703332326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: f77e9db63677d9141919ed9eeb881400, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 15e98d9b3c5dbb24aa4486a2ea3c73bf,
+    type: 3}
+  m_SortingOrder: 0
+--- !u!4 &1703332329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703332326}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913507507
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,3 +572,4 @@ SceneRoots:
   - {fileID: 1473451650}
   - {fileID: 1913507510}
   - {fileID: 26253171}
+  - {fileID: 1703332329}

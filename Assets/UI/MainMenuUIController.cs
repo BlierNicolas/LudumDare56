@@ -12,10 +12,15 @@ namespace UI
             Button playButton = root.Q<Button>("Play");
             Button quitButton = root.Q<Button>("Quit");
 
-            playButton.clicked += OnQuit;
+            playButton.clicked += OnPlay;
             quitButton.clicked += OnQuit;
         }
 
+        void OnPlay()
+        {
+            
+        }
+        
         void OnQuit()
         {
             Application.Quit();
