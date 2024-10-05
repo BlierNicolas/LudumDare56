@@ -50,12 +50,13 @@
     <Compile Include="Assets\Scripts\Inputs\IInputConsumer.cs" />
     <Compile Include="Assets\Scripts\InAirState.cs" />
     <Compile Include="Assets\Scripts\Inputs\InputBufferHandler.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MovingState.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainState.cs" />
     <Compile Include="Assets\Scripts\Inputs\Data\InputData.cs" />
     <Compile Include="Assets\Scripts\IState.cs" />
     <Compile Include="Assets\Scripts\StickedState.cs" />
+    <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\Scripts\CharacterStateMachine.cs" />
     <Compile Include="Assets\Scripts\IdleState.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
