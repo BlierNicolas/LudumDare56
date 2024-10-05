@@ -17,7 +17,6 @@ namespace UI
 
         void Update()
         {
-            m_score += Time.deltaTime;
             m_scoreLabel.text = ((int)m_score).ToString();
         }
     }
