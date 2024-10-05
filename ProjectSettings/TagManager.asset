@@ -8,11 +8,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Tetrominos
   - Water
   - UI
+<<<<<<< Updated upstream
+  - Background
+  - Player
+=======
+  - Gary
   - 
-  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 
@@ -38,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 10160083
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
