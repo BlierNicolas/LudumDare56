@@ -6,8 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 { 
     public static GameManager Instance { get; private set; }
-    [SerializeField] private GameObject _pauseScreen;
-    [SerializeField] private GameObject _startScreen;
+    [SerializeField] private GameObject m_pauseScreen;
+    [SerializeField] private GameObject m_startScreen;
     
     private void Awake() 
     { 
@@ -24,16 +24,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 0;
-        _pauseScreen.SetActive(false);
-        _startScreen.SetActive(true);
-        SoundManager.Instance.PlayStartScreenMusic();
+        m_pauseScreen.SetActive(false);
+        m_startScreen.SetActive(true);
     }
 
     public void StartGame()
     {
-        _startScreen.SetActive(false);
+        m_startScreen.SetActive(false);
         Time.timeScale = 1;
-        SoundManager.Instance.StopStartScreenMusic();
     }
     
     public void TogglePause()
@@ -41,7 +39,7 @@ public class GameManager : MonoBehaviour
         bool isPaused = Time.timeScale == 0;
         Time.timeScale = isPaused ? 1 : 0;
         
-        _pauseScreen.SetActive(!isPaused);
+        m_pauseScreen.SetActive(!isPaused);
     }
 
     public void QuitGame()

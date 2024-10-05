@@ -5,17 +5,17 @@ using UnityEngine;
 public abstract class MainState : IState
 {
     protected const float MAX_MOVEMENTSPEED = 100f;
-    protected Rigidbody2D _rigidbody;
-    protected float _speed;
-    protected CharacterStateMachine _stateMachine;
-    protected float _jumpPower;
+    protected Rigidbody2D m_rigidbody;
+    protected float m_speed;
+    protected CharacterStateMachine m_stateMachine;
+    protected float m_jumpPower;
     
     public MainState(CharacterStateMachine sm)
     {
-        _stateMachine = sm;
-        _rigidbody = sm.GetRB();
-        _speed = sm.GetSpeed();
-        _jumpPower = sm.GetJumpPower();
+        m_stateMachine = sm;
+        m_rigidbody = sm.GetRB();
+        m_speed = sm.GetSpeed();
+        m_jumpPower = sm.GetJumpPower();
     }
     public virtual void OnEnter()
     {

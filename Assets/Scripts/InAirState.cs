@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InAirState : MainState
 {
-    private Vector2 _direction;
+    private Vector2 m_direction;
 
     public InAirState(CharacterStateMachine sm) : base(sm)
     {
@@ -13,7 +13,7 @@ public class InAirState : MainState
 
     public override void OnEnter()
     {
-        _speed = _stateMachine.GetSpeed() / 2;
+        m_speed = m_stateMachine.GetSpeed() / 2;
         Debug.Log("Entering AirState");
         
     }
@@ -25,24 +25,24 @@ public class InAirState : MainState
     
     public override bool CanEnter()
     {
-        return !_stateMachine.CheckIfSticked() || _stateMachine.CheckIfInAir();
+        return !m_stateMachine.CheckIfSticked() || m_stateMachine.CheckIfInAir();
     }
     
     public override bool CanExit()
     {
-        return _stateMachine.CheckIfSticked() || !_stateMachine.CheckIfInAir();
+        return m_stateMachine.CheckIfSticked() || !m_stateMachine.CheckIfInAir();
     }
     
     public override void OnUpdate()
     {
         RotateCharacter();
-        _direction = GetInPutDirection();
+        m_direction = GetInPutDirection();
     }
     
     public override void OnFixedUpdate()
     {
         Debug.Log("OnFixedUpdate");
-        _rigidbody.AddForce(_direction * (_speed* Time.fixedDeltaTime), ForceMode2D.Force);
+        m_rigidbody.AddForce(m_direction * (m_speed* Time.fixedDeltaTime), ForceMode2D.Force);
         ClampVelocity();
 
     }
@@ -76,15 +76,15 @@ public class InAirState : MainState
 
         }
 
-        _rigidbody.transform.Rotate(angle);
+        m_rigidbody.transform.Rotate(angle);
 
     }
     
     private void ClampVelocity()
     {
-        Vector2 velocity = _rigidbody.velocity;
+        Vector2 velocity = m_rigidbody.velocity;
         velocity.x = Mathf.Clamp(velocity.x, -MAX_MOVEMENTSPEED, MAX_MOVEMENTSPEED);
-        _rigidbody.velocity = velocity;
+        m_rigidbody.velocity = velocity;
     }
     
 }
