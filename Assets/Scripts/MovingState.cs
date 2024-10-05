@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class MovingState : MainState
 {
-    private Vector2 m_direction;
-    private float m_dragForce;
+    private Vector2 _direction;
+    private float _dragForce;
 
     public MovingState(CharacterStateMachine sm) : base(sm)
     {
-        m_dragForce = sm.GetDragForce();
+        _dragForce = sm.GetDragForce();
     }
 
     public override void OnEnter()
     {
-        m_speed = m_sm.GetSpeed();
+        _speed = _stateMachine.GetSpeed();
         Debug.Log("Entering MovingState");
         
     }
@@ -27,26 +27,26 @@ public class MovingState : MainState
     
     public override bool CanEnter()
     {
-        return !m_sm.CheckIfSticked() || !m_sm.CheckIfInAir();
+        return !_stateMachine.CheckIfSticked() || !_stateMachine.CheckIfInAir();
     }
     
     public override bool CanExit()
     {
-        return m_sm.CheckIfSticked() || m_sm.CheckIfInAir();
+        return _stateMachine.CheckIfSticked() || _stateMachine.CheckIfInAir();
     }
     
     public override void OnUpdate()
     {
         Jump();
-        m_direction = GetInPutDirection();
+        _direction = GetInPutDirection();
     }
     
     public override void OnFixedUpdate()
     {
-        m_rb.AddForce(m_direction * (m_speed* Time.fixedDeltaTime), ForceMode2D.Force);
-        m_rb.AddForce(-m_direction * (m_dragForce * Time.fixedDeltaTime), ForceMode2D.Force);
+        _rigidbody.AddForce(_direction * (_speed* Time.fixedDeltaTime), ForceMode2D.Force);
+        _rigidbody.AddForce(-_direction * (_dragForce * Time.fixedDeltaTime), ForceMode2D.Force);
         ClampVelocity();
-        Debug.Log("Must move : " + (m_direction * (m_speed* Time.fixedDeltaTime)));
+        Debug.Log("Must move : " + (_direction * (_speed* Time.fixedDeltaTime)));
 
 
     }
@@ -70,15 +70,15 @@ public class MovingState : MainState
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            m_rb.AddForce(Vector2.up * m_jumpPower, ForceMode2D.Impulse);
+            _rigidbody.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
         }
     }
 
     private void ClampVelocity()
     {
-        Vector2 velocity = m_rb.velocity;
+        Vector2 velocity = _rigidbody.velocity;
         velocity.x = Mathf.Clamp(velocity.x, -MAX_MOVEMENTSPEED, MAX_MOVEMENTSPEED);
-        m_rb.velocity = velocity;
+        _rigidbody.velocity = velocity;
     }
     
 }

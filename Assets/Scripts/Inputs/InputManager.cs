@@ -10,8 +10,8 @@ namespace Inputs
         // Singleton
         public static InputManager Instance { get; private set; }
         
-        private Dictionary<EInputType, bool> m_inputStates = new();
-        private InputBufferHandler m_inputBuffer = null;
+        private Dictionary<EInputType, bool> _inputStates = new();
+        private InputBufferHandler _inputBuffer = null;
         
         private void Awake()
         {
@@ -28,20 +28,20 @@ namespace Inputs
 
         private void Start()
         {
-            m_inputBuffer ??= GetComponent<InputBufferHandler>();
+            _inputBuffer ??= GetComponent<InputBufferHandler>();
 
             LinkInputEvents();
         }
         
         private void LinkInputEvents()
         {
-            foreach (var inputData in m_inputBuffer.m_availableInputActions)
+            foreach (var inputData in _inputBuffer.AvailableInputActions)
             {
-                inputData.InputEvent.AddListener((value) => m_inputStates[inputData.InputType] = value);
+                inputData.InputEvent.AddListener((value) => _inputStates[inputData.InputType] = value);
             }
         }
 
-        public bool GetInput(EInputType inputType) => m_inputStates.ContainsKey(inputType) && m_inputStates[inputType];
+        public bool GetInput(EInputType inputType) => _inputStates.ContainsKey(inputType) && _inputStates[inputType];
     }
 }
 

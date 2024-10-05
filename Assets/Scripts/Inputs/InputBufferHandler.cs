@@ -9,10 +9,10 @@ namespace Inputs
     public class InputBufferHandler : MonoBehaviour
     {
         /*[SerializeField] private StateMachine m_stateMachine = null;*/
-        [field: SerializeField] public List<InputData> m_availableInputActions { get; private set; }
-        [SerializeField] private bool m_showDebugInputs = false;
+        [field: SerializeField] public List<InputData> AvailableInputActions { get; private set; }
+        [SerializeField] private bool _showDebugInputs = false;
         
-        private List<InputData> m_inputBuffer = new();
+        private List<InputData> _inputBuffer = new();
         
         private void Update()
         {
@@ -23,7 +23,7 @@ namespace Inputs
 
         private void ResetInputsState()
         {
-            foreach (var inputAction in m_availableInputActions)
+            foreach (var inputAction in AvailableInputActions)
             {
                 inputAction.InputEvent.Invoke(false);
             }
@@ -31,35 +31,35 @@ namespace Inputs
 
         private void ProcessBufferedInputs()
         {
-            if (m_inputBuffer.Count <= 0) return;
+            if (_inputBuffer.Count <= 0) return;
 
-            for (int i = 0; i < m_inputBuffer.Count; i++)
+            for (int i = 0; i < _inputBuffer.Count; i++)
             {
-                if (Time.time <= m_inputBuffer[i].GetTimestamp() /*&& test.CanConsumeInput(m_inputBuffer[i].InputType)*/)
+                if (Time.time <= _inputBuffer[i].GetTimestamp() /*&& test.CanConsumeInput(m_inputBuffer[i].InputType)*/)
                 {
-                    if (m_showDebugInputs)
+                    if (_showDebugInputs)
                     {
-                        print("Consumed input " + m_inputBuffer[i].InputType);
+                        print("Consumed input " + _inputBuffer[i].InputType);
                     }
                     
-                    m_inputBuffer[i].InputEvent.Invoke(true);
-                    UnregisterInput(m_inputBuffer[i]);
+                    _inputBuffer[i].InputEvent.Invoke(true);
+                    UnregisterInput(_inputBuffer[i]);
                 }
-                else if(Time.time > m_inputBuffer[i].GetTimestamp())
+                else if(Time.time > _inputBuffer[i].GetTimestamp())
                 {
-                    if (m_showDebugInputs)
+                    if (_showDebugInputs)
                     {
-                        Debug.Log("Unregistered input " + m_inputBuffer[i].InputType);
+                        Debug.Log("Unregistered input " + _inputBuffer[i].InputType);
                     }
 
-                    UnregisterInput(m_inputBuffer[i]);
+                    UnregisterInput(_inputBuffer[i]);
                 }
             }
         }
         
         private void CheckForPlayerInputs()
         {
-            foreach (var keyData in m_availableInputActions.Where(keyData => Input.GetKey(keyData.Key)))
+            foreach (var keyData in AvailableInputActions.Where(keyData => Input.GetKey(keyData.Key)))
             {
                 ValidateAndRegisterInput(keyData.InputType);
             }
@@ -77,23 +77,23 @@ namespace Inputs
 
         private InputData FindMatchingInput(EInputType inputType)
         {
-            return m_availableInputActions.FirstOrDefault(input => input.InputType == inputType);
+            return AvailableInputActions.FirstOrDefault(input => input.InputType == inputType);
         }
 
         private void RegisterInput(InputData inputAction)
         {
-            if (!m_inputBuffer.Contains(inputAction))
+            if (!_inputBuffer.Contains(inputAction))
             {
                 inputAction.RegisterNewTimestamp(Time.time);
-                m_inputBuffer.Add(inputAction);
+                _inputBuffer.Add(inputAction);
             }
         }
 
         private void UnregisterInput(InputData inputAction)
         {
-            if (m_inputBuffer.Contains(inputAction))
+            if (_inputBuffer.Contains(inputAction))
             {
-                m_inputBuffer.Remove(inputAction);
+                _inputBuffer.Remove(inputAction);
             }
         }
     }
