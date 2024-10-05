@@ -5,41 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec1bcde-0ae9-446a-8bcb-cb1ffc714de3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterStateMachine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterStateMachine.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/IState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/IState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/IdleState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/IdleState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InAirState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InAirState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/Data.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/Data/InputData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/Data/InputData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/Data/InputTypeEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/Data/InputTypeEnum.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/IInputConsumer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/IInputConsumer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputBufferHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputBufferHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inputs/InputManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StickedState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StickedState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StateMachineTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StateMachineTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelPrototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelPrototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +19,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StickedState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -64,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging Alexandre",
+    "git-widget-placeholder": "Alexandre",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
