@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Score :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ScoreText" style="align-self: flex-end; justify-content: center; font-size: 48px; left: -180px;" />
+        <ui:Label tabindex="-1" text="1000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Score" style="align-self: flex-end; justify-content: center; font-size: 48px; left: -25px; top: -70px;" />
+    </ui:VisualElement>
+</ui:UXML>
