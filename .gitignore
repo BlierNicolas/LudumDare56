@@ -33,3 +33,5 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.csproj
+*.sln
