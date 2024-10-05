@@ -18,7 +18,8 @@ namespace UI
 
         void OnPlay()
         {
-            
+            //TODO
+            //Begin new ingame scene
         }
         
         void OnQuit()
