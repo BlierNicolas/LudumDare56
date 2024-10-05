@@ -20,12 +20,12 @@ public class StickedState : MainState
     
     public override bool CanEnter()
     {
-        return _stateMachine.CheckIfSticked();
+        return m_stateMachine.CheckIfSticked();
     }
     
     public override bool CanExit()
     {
-        return !_stateMachine.CheckIfSticked();
+        return !m_stateMachine.CheckIfSticked();
     }
     
     public override void OnUpdate()

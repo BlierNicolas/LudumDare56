@@ -11,62 +11,62 @@ public class CharacterStateMachine : MonoBehaviour
 
     private Collider m_collisionGroundChecker;
 
-    [SerializeField] private float _speed;
+    [SerializeField] private float m_speed;
 
-    [SerializeField] private float _dragForce;
+    [SerializeField] private float m_dragForce;
 
-    [SerializeField] private float _rotationIncrement = 90;
-    [SerializeField] private float _jumpPower = 5;
+    [SerializeField] private float m_rotationIncrement = 90;
+    [SerializeField] private float m_jumpPower = 5;
 
-    public bool _isSticked = false;
-    public bool _isInAir = false;
+    public bool m_isSticked = false;
+    public bool m_isInAir = false;
     
-    private float _currentSpeed;
+    private float m_currentSpeed;
 
-    private IState _currentState;
+    private IState m_currentState;
 
-    private Transform _objectToPlaceIn;
+    private Transform m_objectToPlaceIn;
 
-    private List<MainState> _allStates = new List<MainState>();
+    private List<MainState> m_allStates = new List<MainState>();
 
     private void Awake()
     {
         m_rb = GetComponent<Rigidbody2D>();
-        _allStates.Add(new MovingState(this));
-        _allStates.Add(new InAirState(this));
+        m_allStates.Add(new MovingState(this));
+        m_allStates.Add(new InAirState(this));
 
-        _currentState = _allStates[0];
-        _currentState.CanEnter();
+        m_currentState = m_allStates[0];
+        m_currentState.CanEnter();
 
     }
 
     void Update()
     {
-        _currentState.OnUpdate();
+        m_currentState.OnUpdate();
         TransitionToNextState();
     }
 
     private void FixedUpdate()
     {
-        _currentState.OnFixedUpdate();
+        m_currentState.OnFixedUpdate();
     }
 
     private void TransitionToNextState()
     {
-        if (!_currentState.CanExit())
+        if (!m_currentState.CanExit())
         {
             return;
         }
 
-        foreach (var state in _allStates)
+        foreach (var state in m_allStates)
         {
-            if (state == _currentState || !state.CanEnter())
+            if (state == m_currentState || !state.CanEnter())
             {
                 continue;
             }
-            _currentState.OnExit();
-            _currentState = state;
-            _currentState.OnEnter();
+            m_currentState.OnExit();
+            m_currentState = state;
+            m_currentState.OnEnter();
             return;
         }
     }
@@ -78,27 +78,27 @@ public class CharacterStateMachine : MonoBehaviour
 
     public float GetSpeed()
     {
-        return _speed;
+        return m_speed;
     }
 
     public float GetDragForce()
     {
-        return _dragForce;
+        return m_dragForce;
     }
 
     public float GetJumpPower()
     {
-        return _jumpPower;
+        return m_jumpPower;
     }
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-        _isInAir = false;
+        m_isInAir = false;
         if (other.gameObject.layer == 3)
         {
-            _objectToPlaceIn = other.transform;
-            transform.parent = _objectToPlaceIn;
-            _isSticked = true;
+            m_objectToPlaceIn = other.transform;
+            transform.parent = m_objectToPlaceIn;
+            m_isSticked = true;
         }
     }
 
@@ -106,19 +106,19 @@ public class CharacterStateMachine : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            _isSticked = false;
+            m_isSticked = false;
             return;
         }
-        _isInAir = true;
+        m_isInAir = true;
     }
 
     public bool CheckIfInAir()
     {
-        return _isInAir;
+        return m_isInAir;
     }
     
     public bool CheckIfSticked()
     {
-        return _isSticked;
+        return m_isSticked;
     }
 }
