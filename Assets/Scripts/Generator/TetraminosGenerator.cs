@@ -15,7 +15,7 @@ public class TetraminosGenerator : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.P))
         {
             GenerateTetramino();
         }

@@ -11,6 +11,9 @@ namespace Managers
         public static GameManager Instance { get; private set; }
         [SerializeField] private GameObject m_pauseScreen;
 
+        [SerializeField] private GameObject m_spawnPoint;
+        [SerializeField] private GameObject m_lockedItems;
+
         public float m_score { get; private set; } = 0f;
     
         private void Awake() 
@@ -38,6 +41,16 @@ namespace Managers
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 OnPauseGame();
+            }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                if (m_spawnPoint.transform.childCount > 0)
+                {
+                    var child = m_spawnPoint.transform.GetChild(0);
+                    Destroy(child.GetComponent<CharacterStateMachine>());
+                    m_spawnPoint.transform.DetachChildren();
+                    child.transform.SetParent(m_lockedItems.transform, false);
+                }
             }
         }
         
