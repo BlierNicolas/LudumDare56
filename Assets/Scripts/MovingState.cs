@@ -15,7 +15,7 @@ public class MovingState : MainState
 
     public override void OnEnter()
     {
-        m_speed = m_sm.GetSpeed();
+        m_speed = m_stateMachine.GetSpeed();
         Debug.Log("Entering MovingState");
         
     }
@@ -27,12 +27,12 @@ public class MovingState : MainState
     
     public override bool CanEnter()
     {
-        return !m_sm.CheckIfSticked() || !m_sm.CheckIfInAir();
+        return !m_stateMachine.CheckIfSticked() || !m_stateMachine.CheckIfInAir();
     }
     
     public override bool CanExit()
     {
-        return m_sm.CheckIfSticked() || m_sm.CheckIfInAir();
+        return m_stateMachine.CheckIfSticked() || m_stateMachine.CheckIfInAir();
     }
     
     public override void OnUpdate()
@@ -43,8 +43,8 @@ public class MovingState : MainState
     
     public override void OnFixedUpdate()
     {
-        m_rb.AddForce(m_direction * (m_speed* Time.fixedDeltaTime), ForceMode2D.Force);
-        m_rb.AddForce(-m_direction * (m_dragForce * Time.fixedDeltaTime), ForceMode2D.Force);
+        m_rigidbody.AddForce(m_direction * (m_speed* Time.fixedDeltaTime), ForceMode2D.Force);
+        m_rigidbody.AddForce(-m_direction * (m_dragForce * Time.fixedDeltaTime), ForceMode2D.Force);
         ClampVelocity();
         Debug.Log("Must move : " + (m_direction * (m_speed* Time.fixedDeltaTime)));
 
@@ -70,15 +70,15 @@ public class MovingState : MainState
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            m_rb.AddForce(Vector2.up * m_jumpPower, ForceMode2D.Impulse);
+            m_rigidbody.AddForce(Vector2.up * m_jumpPower, ForceMode2D.Impulse);
         }
     }
 
     private void ClampVelocity()
     {
-        Vector2 velocity = m_rb.velocity;
+        Vector2 velocity = m_rigidbody.velocity;
         velocity.x = Mathf.Clamp(velocity.x, -MAX_MOVEMENTSPEED, MAX_MOVEMENTSPEED);
-        m_rb.velocity = velocity;
+        m_rigidbody.velocity = velocity;
     }
     
 }

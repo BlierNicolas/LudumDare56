@@ -13,7 +13,7 @@ public class InAirState : MainState
 
     public override void OnEnter()
     {
-        m_speed = m_sm.GetSpeed() / 2;
+        m_speed = m_stateMachine.GetSpeed() / 2;
         Debug.Log("Entering AirState");
         
     }
@@ -25,12 +25,12 @@ public class InAirState : MainState
     
     public override bool CanEnter()
     {
-        return !m_sm.CheckIfSticked() || m_sm.CheckIfInAir();
+        return !m_stateMachine.CheckIfSticked() || m_stateMachine.CheckIfInAir();
     }
     
     public override bool CanExit()
     {
-        return m_sm.CheckIfSticked() || !m_sm.CheckIfInAir();
+        return m_stateMachine.CheckIfSticked() || !m_stateMachine.CheckIfInAir();
     }
     
     public override void OnUpdate()
@@ -42,7 +42,7 @@ public class InAirState : MainState
     public override void OnFixedUpdate()
     {
         Debug.Log("OnFixedUpdate");
-        m_rb.AddForce(m_direction * (m_speed* Time.fixedDeltaTime), ForceMode2D.Force);
+        m_rigidbody.AddForce(m_direction * (m_speed* Time.fixedDeltaTime), ForceMode2D.Force);
         ClampVelocity();
 
     }
@@ -76,15 +76,15 @@ public class InAirState : MainState
 
         }
 
-        m_rb.transform.Rotate(angle);
+        m_rigidbody.transform.Rotate(angle);
 
     }
     
     private void ClampVelocity()
     {
-        Vector2 velocity = m_rb.velocity;
+        Vector2 velocity = m_rigidbody.velocity;
         velocity.x = Mathf.Clamp(velocity.x, -MAX_MOVEMENTSPEED, MAX_MOVEMENTSPEED);
-        m_rb.velocity = velocity;
+        m_rigidbody.velocity = velocity;
     }
     
 }
