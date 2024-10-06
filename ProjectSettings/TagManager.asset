@@ -38,9 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 3857839
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Goo
+    uniqueID: 416956563
+    locked: 0
+  - name: Tendril
+    uniqueID: 2664829579
+    locked: 0
+  - name: Body
+    uniqueID: 146038849
+    locked: 0
+  - name: FacialFeature
+    uniqueID: 2589916061
     locked: 0

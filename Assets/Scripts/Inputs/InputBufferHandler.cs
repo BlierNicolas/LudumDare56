@@ -8,7 +8,7 @@ namespace Inputs
     /* RequireComponent(typeof(StateMachine))*/
     public class InputBufferHandler : MonoBehaviour
     {
-        /*[SerializeField] private StateMachine m_stateMachine = null;*/
+        /*[SerializeField] private StateMachine m_sm = null;*/
         [field: SerializeField] public List<InputData> m_availableInputActions { get; private set; }
         [SerializeField] private bool m_showDebugInputs = false;
         

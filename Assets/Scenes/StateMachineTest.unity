@@ -293,16 +293,16 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1242131637
 SpriteRenderer:
@@ -345,7 +345,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -366,7 +367,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.094345406, y: 0.245, z: -0.06913495}
-  m_LocalScale: {x: 15.45, y: 1, z: 1}
+  m_LocalScale: {x: 9.21, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -384,6 +385,8 @@ GameObject:
   - component: {fileID: 1720725301}
   - component: {fileID: 1720725300}
   - component: {fileID: 1720725299}
+  - component: {fileID: 1720725305}
+  - component: {fileID: 1720725304}
   m_Layer: 3
   m_Name: TetraMinos
   m_TagString: Untagged
@@ -403,11 +406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e1e9f8edfef1f49aeeae999e9d2499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 100
-  m_dragForce: 10
-  m_rotationIncrement: 90
-  m_jumpPower: 5
-  m_isPlaced: 0
+  <Speed>k__BackingField: 30
+  <DragForce>k__BackingField: 20
+  <RotationIncrement>k__BackingField: 90
+  <JumpPower>k__BackingField: 5
   m_isInAir: 0
 --- !u!50 &1720725300
 Rigidbody2D:
@@ -548,6 +550,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1720725304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720725298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896b7b589c84aea4491f58efdb5f8cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1720725305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720725298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a567fb78b8fa646a895ae306cd9b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <m_availableInputActions>k__BackingField:
+  - <InputType>k__BackingField: 1
+    <Key>k__BackingField: 97
+    <ExpirationTime>k__BackingField: 0
+  - <InputType>k__BackingField: 2
+    <Key>k__BackingField: 100
+    <ExpirationTime>k__BackingField: 0
+  - <InputType>k__BackingField: 3
+    <Key>k__BackingField: 113
+    <ExpirationTime>k__BackingField: 0
+  - <InputType>k__BackingField: 4
+    <Key>k__BackingField: 101
+    <ExpirationTime>k__BackingField: 0
+  - <InputType>k__BackingField: 5
+    <Key>k__BackingField: 32
+    <ExpirationTime>k__BackingField: 0.5
+  m_showDebugInputs: 0
 --- !u!1 &1738446277
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,11 +760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e1e9f8edfef1f49aeeae999e9d2499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 100
-  m_dragForce: 10
-  m_rotationIncrement: 90
-  m_jumpPower: 5
-  m_isPlaced: 0
+  <Speed>k__BackingField: 5
+  <DragForce>k__BackingField: 2.5
+  <RotationIncrement>k__BackingField: 90
+  <JumpPower>k__BackingField: 5
   m_isInAir: 0
 --- !u!50 &2131715955
 Rigidbody2D:
