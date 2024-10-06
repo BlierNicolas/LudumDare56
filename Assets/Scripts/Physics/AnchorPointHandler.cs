@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class AnchorPointHandler : MonoBehaviour
@@ -9,6 +7,7 @@ public class AnchorPointHandler : MonoBehaviour
     [SerializeField] private float m_jointPullForce = 4.0f;
     [SerializeField] private float m_jointMinimalDistance = 0.005f;
     [SerializeField] private float m_jointBreakForce = 5.0f;
+    [SerializeField] private float m_connectionDistance = 0.1f;
     
     private readonly List<GameObject> m_anchorPoints = new();
     private Dictionary<SpringJoint2D, Tuple<Transform, Transform>> m_jointAnchors = new();
@@ -46,7 +45,7 @@ public class AnchorPointHandler : MonoBehaviour
         {
             for (int j = i + 1; j < m_anchorPoints.Count; j++)
             {
-                if (Vector2.Distance(m_anchorPoints[i].transform.position, m_anchorPoints[j].transform.position) < 0.1f)
+                if (Vector2.Distance(m_anchorPoints[i].transform.position, m_anchorPoints[j].transform.position) < m_connectionDistance)
                 {
                     CreateSpringJointPair(m_anchorPoints[i],m_anchorPoints[j]);
                     
