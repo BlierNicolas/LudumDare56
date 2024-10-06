@@ -1,4 +1,6 @@
+using Managers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace UI
@@ -12,17 +14,17 @@ namespace UI
             Button playButton = root.Q<Button>("Play");
             Button quitButton = root.Q<Button>("Quit");
 
-            playButton.clicked += OnPlay;
-            quitButton.clicked += OnQuit;
-        }
-
-        void OnPlay()
-        {
-            //TODO
-            //Begin new ingame scene
+            playButton.clicked += OnStartGame;
+            quitButton.clicked += OnQuitGame;
         }
         
-        void OnQuit()
+        void OnStartGame()
+        {
+            Debug.Log("Loading");
+            SceneManager.LoadSceneAsync("LevelPrototype");
+        }
+        
+        void OnQuitGame()
         {
             Application.Quit();
         }
