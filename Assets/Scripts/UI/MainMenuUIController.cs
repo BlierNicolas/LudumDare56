@@ -1,28 +1,30 @@
+using Managers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace UI
 {
     public class MainMenuUIController : MonoBehaviour
     {
-        void OnEnable()
+        private void OnEnable()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
             Button playButton = root.Q<Button>("Play");
             Button quitButton = root.Q<Button>("Quit");
 
-            playButton.clicked += OnPlay;
-            quitButton.clicked += OnQuit;
-        }
-
-        void OnPlay()
-        {
-            //TODO
-            //Begin new ingame scene
+            playButton.clicked += OnStartGame;
+            quitButton.clicked += OnQuitGame;
         }
         
-        void OnQuit()
+        private void OnStartGame()
+        {
+            Debug.Log("Loading");
+            SceneManager.LoadSceneAsync("LevelPrototype");
+        }
+        
+        private void OnQuitGame()
         {
             Application.Quit();
         }
