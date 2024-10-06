@@ -24,7 +24,7 @@ public class TetraminosGenerator : MonoBehaviour
     private void GenerateTetramino()
     {
         var index = Random.Range(0, m_shapes.Count);
-        m_tetramino = Instantiate(m_shapes[index], Vector2.zero, Quaternion.identity, m_tetraminoList.transform);
+        m_tetramino = Instantiate(m_shapes[index], m_tetraminoList.transform);
 
         var featureGenerator = m_tetramino.GetComponent<FeatureGenerator>();
 
