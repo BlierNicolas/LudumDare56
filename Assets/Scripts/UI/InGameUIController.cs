@@ -10,14 +10,14 @@ namespace UI
         private float m_score = 0f;
         private float m_numberUsed = 0f;
     
-        void OnEnable()
+        private void OnEnable()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
             m_scoreLabel = root.Q<Label>("Score");
         }
 
-        void Update()
+        private void Update()
         {
             //TODO Get score from gamemanager
             //TODO Get numberused from gamemanager

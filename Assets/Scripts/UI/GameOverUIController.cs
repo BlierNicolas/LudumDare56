@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -5,10 +6,13 @@ namespace UI
 {
     public class GameOverUIController : MonoBehaviour
     {
+        private GameManager m_gameManager;
         private bool m_victory = false;
         
-        void OnEnable()
+        private void OnEnable()
         {
+            m_gameManager = GameManager.Instance;
+            
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
             Label gameOverLabel = root.Q<Label>("GameOverText");
@@ -28,9 +32,10 @@ namespace UI
             mainMenuButton.clicked += OnMainMenu;
         }
 
-        void OnMainMenu()
+        private void OnMainMenu()
         {
             //TODO Change scene to main menu
+            m_gameManager.OnMainMenu();
         }
     }
 }
