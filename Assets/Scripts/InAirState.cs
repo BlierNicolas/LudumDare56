@@ -33,9 +33,10 @@ public class InAirState : BaseState
 
     private void RotateCharacter()
     {
-        Vector3 angle = new Vector3(0, 0,
-            (InputManager.Instance.GetInput(EInputType.Rotate_Right) ? 45 :
-                0) - (InputManager.Instance.GetInput(EInputType.Rotate_Left) ? -45 : 0));
+        var zAngle = (InputManager.Instance.GetInput(EInputType.Rotate_Right) ? m_sm.RotationAngle : 0) - 
+                     (InputManager.Instance.GetInput(EInputType.Rotate_Left) ? -m_sm.RotationAngle : 0);
+
+        Vector3 angle = new Vector3(0, 0, zAngle);
         
         m_sm.Rigidbody.transform.Rotate(angle);
     }

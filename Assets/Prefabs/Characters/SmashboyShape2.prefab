@@ -234,6 +234,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8292226470873155982, guid: 8f931ad46e710dd44be9f9cd3c931789,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292226470873155982, guid: 8f931ad46e710dd44be9f9cd3c931789,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292226470873155982, guid: 8f931ad46e710dd44be9f9cd3c931789,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292226470873155982, guid: 8f931ad46e710dd44be9f9cd3c931789,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -282,6 +297,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8292226470873155982, guid: 8f931ad46e710dd44be9f9cd3c931789,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -306,6 +326,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6822760482423162934}
+    - targetCorrespondingSourceObject: {fileID: 3667695158809706434, guid: 8f931ad46e710dd44be9f9cd3c931789,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4682926835371477678}
   m_SourcePrefab: {fileID: 100100000, guid: 8f931ad46e710dd44be9f9cd3c931789, type: 3}
 --- !u!1 &329615848209142002 stripped
 GameObject:
@@ -393,3 +417,21 @@ MonoBehaviour:
   - {fileID: 5729142407815741091}
   - {fileID: 5680922576830394159}
   - {fileID: 329615848209142002}
+--- !u!114 &4682926835371477678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890922530844873226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e1e9f8edfef1f49aeeae999e9d2499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Speed>k__BackingField: 30
+  <DragForce>k__BackingField: 20
+  <RotationIncrement>k__BackingField: 90
+  <JumpPower>k__BackingField: 15
+  <RotationAngle>k__BackingField: 90
+  m_isInAir: 0

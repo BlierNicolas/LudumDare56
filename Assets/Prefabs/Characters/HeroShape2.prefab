@@ -154,6 +154,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218672456340643337, guid: a567ca9dcc34dba44bfa39a309eb565a,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218672456340643337, guid: a567ca9dcc34dba44bfa39a309eb565a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218672456340643337, guid: a567ca9dcc34dba44bfa39a309eb565a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218672456340643337, guid: a567ca9dcc34dba44bfa39a309eb565a,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -201,6 +216,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218672456340643337, guid: a567ca9dcc34dba44bfa39a309eb565a,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4810598604804779254, guid: a567ca9dcc34dba44bfa39a309eb565a,
         type: 3}
@@ -301,6 +321,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9148647388151071222}
+    - targetCorrespondingSourceObject: {fileID: 690927198502750096, guid: a567ca9dcc34dba44bfa39a309eb565a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5826074089316277425}
   m_SourcePrefab: {fileID: 100100000, guid: a567ca9dcc34dba44bfa39a309eb565a, type: 3}
 --- !u!1 &803418404697777395 stripped
 GameObject:
@@ -336,6 +360,24 @@ MonoBehaviour:
   - {fileID: 4799702967639515074}
   - {fileID: 9050853422508112736}
   - {fileID: 1533456739217291902}
+--- !u!114 &-5826074089316277425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803418404697777395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e1e9f8edfef1f49aeeae999e9d2499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Speed>k__BackingField: 30
+  <DragForce>k__BackingField: 20
+  <RotationIncrement>k__BackingField: 90
+  <JumpPower>k__BackingField: 15
+  <RotationAngle>k__BackingField: 90
+  m_isInAir: 0
 --- !u!1 &1533456739217291902 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1726871726271600925, guid: a567ca9dcc34dba44bfa39a309eb565a,

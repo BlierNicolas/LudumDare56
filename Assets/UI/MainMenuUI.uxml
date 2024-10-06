@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1;">
-        <ui:Label tabindex="-1" text="Hold on,&#10;Garry!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" style="align-items: auto; justify-content: flex-end; align-self: center; font-size: 100px; top: 300px; -unity-text-align: upper-center;" />
-        <ui:Button text="Play" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Play" style="align-items: auto; align-self: center; font-size: 48px; top: 400px;" />
-        <ui:Button text="Quit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Quit" style="align-items: center; align-self: center; font-size: 48px; justify-content: flex-start; top: 500px;" />
+    <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Menu/Main_menu.png?fileID=2800000&amp;guid=f0f1c42f908e3d340b1a47aaa55258af&amp;type=3#Main_menu&apos;); flex-direction: column; align-items: center;">
+        <ui:GroupBox style="flex-direction: row; justify-content: space-between; align-self: center; align-items: auto; top: 800px; flex-wrap: nowrap;">
+            <ui:Button text="Play" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Play" style="align-self: center; font-size: 48px; margin-right: 100px; margin-left: 100px;" />
+            <ui:Button text="Quit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Quit" style="align-self: center; font-size: 48px; margin-right: 100px; margin-left: 100px;" />
+        </ui:GroupBox>
     </ui:VisualElement>
 </ui:UXML>

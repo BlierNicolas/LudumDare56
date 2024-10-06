@@ -194,6 +194,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5097800610638954999, guid: 7c3c05c991c129f439f752071386d2ca,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097800610638954999, guid: 7c3c05c991c129f439f752071386d2ca,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097800610638954999, guid: 7c3c05c991c129f439f752071386d2ca,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097800610638954999, guid: 7c3c05c991c129f439f752071386d2ca,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
       objectReference: {fileID: 0}
@@ -241,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097800610638954999, guid: 7c3c05c991c129f439f752071386d2ca,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5099952516789609621, guid: 7c3c05c991c129f439f752071386d2ca,
         type: 3}
@@ -316,6 +336,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6249049757298113968}
+    - targetCorrespondingSourceObject: {fileID: 8660928476140960889, guid: 7c3c05c991c129f439f752071386d2ca,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9205584997735490154}
   m_SourcePrefab: {fileID: 100100000, guid: 7c3c05c991c129f439f752071386d2ca, type: 3}
 --- !u!1 &1123472055131179438 stripped
 GameObject:
@@ -387,6 +411,24 @@ MonoBehaviour:
   - {fileID: 7172041166515961627}
   - {fileID: 9004858754590885109}
   - {fileID: 2339246911297102577}
+--- !u!114 &9205584997735490154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6421272532855722060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e1e9f8edfef1f49aeeae999e9d2499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Speed>k__BackingField: 30
+  <DragForce>k__BackingField: 20
+  <RotationIncrement>k__BackingField: 90
+  <JumpPower>k__BackingField: 15
+  <RotationAngle>k__BackingField: 90
+  m_isInAir: 0
 --- !u!4 &6548695607791099475 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8920678831571366502, guid: 7c3c05c991c129f439f752071386d2ca,

@@ -7,10 +7,11 @@ public class CharacterStateMachine : MonoBehaviour
 
     private Collider m_collisionGroundChecker;
 
-    [field: SerializeField] public float Speed { get; private set; } = 5.0f;
-    [field: SerializeField] public float DragForce { get; private set; } = 2.5f;
+    [field: SerializeField] public float Speed { get; private set; } = 30.0f;
+    [field: SerializeField] public float DragForce { get; private set; } = 20.0f;
     [field: SerializeField] public float RotationIncrement { get; private set; } = 90;
-    [field: SerializeField] public float JumpPower { get; private set; } = 5;
+    [field: SerializeField] public float JumpPower { get; private set; } = 15;
+    [field: SerializeField] public float RotationAngle { get; private set; } = 90.0f;
     public IState CurrentState { get; private set; }
     
     
@@ -26,7 +27,7 @@ public class CharacterStateMachine : MonoBehaviour
         Rigidbody = GetComponent<Rigidbody2D>();
         
         BuildStateMachine();
-        InitializeState(m_States[^1]); //End of list
+        InitializeState(m_States[0]);
     }
 
     private void BuildStateMachine()
@@ -40,6 +41,7 @@ public class CharacterStateMachine : MonoBehaviour
     {
         CurrentState = newState;
         CurrentState.OnEnter();
+        m_isInAir = CurrentState is InAirState;
     }
 
     private void Update()
