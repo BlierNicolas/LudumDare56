@@ -1,90 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Inputs;
+using Inputs.Data;
 using UnityEngine;
 
-public class InAirState : MainState
+public class InAirState : BaseState
 {
     private Vector2 m_direction;
 
-    public InAirState(CharacterStateMachine sm) : base(sm)
-    {
-    }
-
-    public override void OnEnter()
-    {
-        m_speed = m_stateMachine.GetSpeed() / 2;
-        Debug.Log("Entering AirState");
-        
-    }
-    
-    public override void OnExit()
-    {
-        Debug.Log("Exiting AirState");
-    }
+    public InAirState(CharacterStateMachine sm) : base(sm) {}
     
     public override bool CanEnter()
     {
-        return !m_stateMachine.CheckIfSticked() || m_stateMachine.CheckIfInAir();
+        return true;
     }
     
     public override bool CanExit()
     {
-        return m_stateMachine.CheckIfSticked() || !m_stateMachine.CheckIfInAir();
+        return true;
     }
     
     public override void OnUpdate()
     {
         RotateCharacter();
-        m_direction = GetInPutDirection();
+        m_direction = GetInputDirection();
     }
     
     public override void OnFixedUpdate()
     {
-        Debug.Log("OnFixedUpdate");
-        m_rigidbody.AddForce(m_direction * (m_speed* Time.fixedDeltaTime), ForceMode2D.Force);
-        ClampVelocity();
-
-    }
-    
-    protected Vector2 GetInPutDirection()
-    {
-        Vector2 direction = Vector2.zero;
-        if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
-        {
-            direction += Vector2.right;
-        }
-        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-        {
-            direction += Vector2.left;
-        }
+        m_sm.Rigidbody.AddForce(GetMovementAcceleration(m_direction, m_sm.Speed * 10), ForceMode2D.Force); //Should make 10 a parameter to change in the inspector
         
-        return direction;
+        ClampVelocity();
     }
 
     private void RotateCharacter()
     {
-        Vector3 angle = Vector3.zero;
+        Vector3 angle = new Vector3(0, 0,
+            (InputManager.Instance.GetInput(EInputType.Rotate_Right) ? 45 :
+                0) - (InputManager.Instance.GetInput(EInputType.Rotate_Left) ? -45 : 0));
         
-        if (Input.GetKeyDown(KeyCode.E) && !Input.GetKeyDown(KeyCode.Q))
-        {
-            angle.z += 45;
-        }
-        if (Input.GetKeyDown(KeyCode.Q) && !Input.GetKeyDown(KeyCode.E))
-        {
-            angle.z -= 45;
-
-        }
-
-        m_rigidbody.transform.Rotate(angle);
-
+        m_sm.Rigidbody.transform.Rotate(angle);
     }
     
-    private void ClampVelocity()
+    public override bool CanConsumeInput(EInputType inputType)
     {
-        Vector2 velocity = m_rigidbody.velocity;
-        velocity.x = Mathf.Clamp(velocity.x, -MAX_MOVEMENTSPEED, MAX_MOVEMENTSPEED);
-        m_rigidbody.velocity = velocity;
+        return inputType switch
+        {
+            EInputType.Walk_Left => true,
+            EInputType.Walk_Right => true,
+            EInputType.Rotate_Left => true,
+            EInputType.Rotate_Right => true, //should probably add a timer so that we don't spin at 60 times per seconds
+            _ => false
+        };
     }
-    
 }
