@@ -1,124 +1,91 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CharacterStateMachine : MonoBehaviour
 {
-    private Rigidbody2D m_rb;
+    public Rigidbody2D Rigidbody { get; private set; }
 
     private Collider m_collisionGroundChecker;
 
-    [SerializeField] private float m_speed;
-
-    [SerializeField] private float m_dragForce;
-
-    [SerializeField] private float m_rotationIncrement = 90;
-    [SerializeField] private float m_jumpPower = 5;
-
-    public bool m_isSticked = false;
-    public bool m_isInAir = false;
+    [field: SerializeField] public float Speed { get; private set; } = 5.0f;
+    [field: SerializeField] public float DragForce { get; private set; } = 2.5f;
+    [field: SerializeField] public float RotationIncrement { get; private set; } = 90;
+    [field: SerializeField] public float JumpPower { get; private set; } = 5;
+    public IState CurrentState { get; private set; }
+    
     
     private float m_currentSpeed;
-
-    private IState m_currentState;
-
+    public bool m_isInAir = false;
     private Transform m_objectToPlaceIn;
+    private List<BaseState> m_States = new List<BaseState>();
 
-    private List<MainState> m_allStates = new List<MainState>();
+    public bool ShowDebugLogState { get; private set; } = false;
 
     private void Awake()
     {
-        m_rb = GetComponent<Rigidbody2D>();
-        m_allStates.Add(new MovingState(this));
-        m_allStates.Add(new InAirState(this));
-
-        m_currentState = m_allStates[0];
-        m_currentState.CanEnter();
-
+        Rigidbody = GetComponent<Rigidbody2D>();
+        
+        BuildStateMachine();
+        InitializeState(m_States[^1]); //End of list
     }
 
-    void Update()
+    private void BuildStateMachine()
     {
-        m_currentState.OnUpdate();
-        TransitionToNextState();
+        // Order of importance
+        m_States.Add(new InAirState(this));
+        m_States.Add(new MovingState(this));
+    }
+
+    private void InitializeState(BaseState newState)
+    {
+        CurrentState = newState;
+        CurrentState.OnEnter();
+    }
+
+    private void Update()
+    {
+        TryChangeState();
+        
+        CurrentState.OnUpdate();
     }
 
     private void FixedUpdate()
     {
-        m_currentState.OnFixedUpdate();
+        CurrentState.OnFixedUpdate();
     }
 
-    private void TransitionToNextState()
+    private void TryChangeState()
     {
-        if (!m_currentState.CanExit())
-        {
-            return;
-        }
+        if (!CurrentState.CanExit()) return;
 
-        foreach (var state in m_allStates)
+        foreach (var state in m_States)
         {
-            if (state == m_currentState || !state.CanEnter())
-            {
-                continue;
-            }
-            m_currentState.OnExit();
-            m_currentState = state;
-            m_currentState.OnEnter();
+            if (state == CurrentState || !state.CanEnter()) continue;
+            
+            ChangeState(state);
             return;
         }
     }
 
-    public Rigidbody2D GetRB()
+    private void ChangeState(BaseState newState)
     {
-        return m_rb;
-    }
-
-    public float GetSpeed()
-    {
-        return m_speed;
-    }
-
-    public float GetDragForce()
-    {
-        return m_dragForce;
-    }
-
-    public float GetJumpPower()
-    {
-        return m_jumpPower;
+        CurrentState.OnExit();
+        CurrentState = newState;
+        CurrentState.OnEnter();
     }
 
     public void OnCollisionEnter2D(Collision2D other)
     {
         m_isInAir = false;
-        if (other.gameObject.layer == 3)
-        {
-            m_objectToPlaceIn = other.transform;
-            transform.parent = m_objectToPlaceIn;
-            m_isSticked = true;
-        }
     }
 
     public void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.layer == 3)
-        {
-            m_isSticked = false;
-            return;
-        }
         m_isInAir = true;
     }
 
     public bool CheckIfInAir()
     {
         return m_isInAir;
-    }
-    
-    public bool CheckIfSticked()
-    {
-        return m_isSticked;
     }
 }
