@@ -10,12 +10,18 @@ public class InAirState : BaseState
     
     public override bool CanEnter()
     {
-        return true;
+        return m_sm.CheckIfInAir();
     }
-    
+
+    public override void OnEnter()
+    {
+
+        Debug.Log("inAir");
+    }
+
     public override bool CanExit()
     {
-        return true;
+        return !m_sm.CheckIfInAir();
     }
     
     public override void OnUpdate()
