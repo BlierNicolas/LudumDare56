@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Goo
+    uniqueID: 416956563
+    locked: 0
+  - name: Body
+    uniqueID: 146038849
+    locked: 0
