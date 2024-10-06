@@ -7,7 +7,7 @@ namespace UI
 {
     public class MainMenuUIController : MonoBehaviour
     {
-        void OnEnable()
+        private void OnEnable()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
@@ -18,13 +18,13 @@ namespace UI
             quitButton.clicked += OnQuitGame;
         }
         
-        void OnStartGame()
+        private void OnStartGame()
         {
             Debug.Log("Loading");
             SceneManager.LoadSceneAsync("LevelPrototype");
         }
         
-        void OnQuitGame()
+        private void OnQuitGame()
         {
             Application.Quit();
         }

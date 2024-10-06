@@ -13,7 +13,7 @@ namespace Managers
 
         public float m_score { get; private set; } = 0f;
     
-        void Awake() 
+        private void Awake() 
         { 
             if (Instance != null && Instance != this) 
             { 
@@ -27,13 +27,13 @@ namespace Managers
             m_score = 1000f;
         }
 
-        void Start()
+        private void Start()
         {
             Time.timeScale = 1;
             m_pauseScreen.SetActive(false);
         }
 
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {

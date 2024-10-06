@@ -8,7 +8,7 @@ namespace UI
     {
         private GameManager m_manager;
         
-        void OnEnable()
+        private void OnEnable()
         {
             m_manager = GameManager.Instance;
             
@@ -21,15 +21,13 @@ namespace UI
             mainMenuButton.clicked += OnMainMenu;
         }
 
-        void OnResume()
+        private void OnResume()
         {
-            //TODO Return to game
             m_manager.OnPauseGame();
         }
         
-        void OnMainMenu()
+        private void OnMainMenu()
         {
-            //TODO Return to mainmenu
             m_manager.OnMainMenu();
         }
     }
