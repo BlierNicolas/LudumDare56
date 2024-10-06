@@ -48,6 +48,7 @@
     <Compile Include="Assets\Scripts\Inputs\Data\InputTypeEnum.cs" />
     <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
     <Compile Include="Assets\Scripts\Inputs\IInputConsumer.cs" />
+    <Compile Include="Assets\Scripts\SoundPrototype\PlayerController.cs" />
     <Compile Include="Assets\Scripts\InAirState.cs" />
     <Compile Include="Assets\Scripts\Inputs\InputBufferHandler.cs" />
     <Compile Include="Assets\Scripts\MovingState.cs" />

@@ -11,6 +11,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip _backgroundMusic;
     [SerializeField] private AudioSource _startScreenMusic;
     
+    private AudioSource walkSource;
+    
     [Header("Sound Effects")]
     [SerializeField] private AudioClip _jumpSound;
     [SerializeField] private AudioClip _walkSound;
@@ -41,12 +43,19 @@ public class SoundManager : MonoBehaviour
         _musicSource.clip = _backgroundMusic;
         _musicSource.loop = true;
         _musicSource.playOnAwake = false;
-        _musicSource.volume = 0.25f; 
+        _musicSource.volume = 0.1f; 
         
         _sfxSource = gameObject.AddComponent<AudioSource>();
         _sfxSource.loop = false;
         _sfxSource.playOnAwake = false;
         _sfxSource.volume = 0.5f; 
+        
+        walkSource = gameObject.AddComponent<AudioSource>();
+        walkSource.clip = _walkSound;
+        walkSource.loop = false; // Set to false to prevent looping unless walk sounds are short and trigger individually
+        walkSource.playOnAwake = false;
+        walkSource.volume = 0.5f; // Adjust volume as needed
+
     }
     
     private void PlayBackgroundMusic()
@@ -60,11 +69,17 @@ public class SoundManager : MonoBehaviour
         PlaySFX(_jumpSound);
     }
     
-    public void PlayWalkSound()
+    /*public void PlayWalkSound()
     {
         PlaySFX(_walkSound);
+    }*/
+    public void PlayWalkSound()
+    {
+        if (!walkSource.isPlaying && _walkSound != null)
+        {
+            walkSource.Play();
+        }
     }
-    
     public void PlayHitSound()
     {
         PlaySFX(_hitSound);
@@ -90,6 +105,13 @@ public class SoundManager : MonoBehaviour
         PlaySFX(_victorySound);
     }
     
+    public void StopWalkSound()
+    {
+        if (walkSource.isPlaying)
+        {
+            walkSource.Stop();
+        }
+    }
     public void PlayStartScreenMusic()
     {
         _startScreenMusic.Play();
