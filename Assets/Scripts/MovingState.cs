@@ -6,7 +6,17 @@ public class MovingState : BaseState
     private Vector2 m_direction;
     
     public MovingState(CharacterStateMachine sm) : base(sm) { }
-    
+
+    // public override void OnEnter()
+    // {
+    //     m_sm.footStepsGameObject.SetActive(true);
+    // }
+    //
+    // public override void OnExit()
+    // {
+    //     m_sm.footStepsGameObject.SetActive(false);
+    // }
+
     public override bool CanEnter()
     {
         return !m_sm.CheckIfInAir();
@@ -21,6 +31,23 @@ public class MovingState : BaseState
     {
         Jump();
         m_direction = GetInputDirection();
+        PlayFootStepsSounds();
+    }
+
+    private void PlayFootStepsSounds()
+    {
+        if (m_direction.x != 0)
+        {
+            if (!m_sm.footStepsGameObject.activeSelf)
+            {
+                m_sm.footStepsGameObject.SetActive(true);
+                return;
+            }
+        }
+        else
+        {
+            m_sm.footStepsGameObject.SetActive(false);
+        }
     }
     
     public override void OnFixedUpdate()
@@ -35,6 +62,7 @@ public class MovingState : BaseState
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            SoundManager.Instance.PlayJumpSound();
             m_sm.Rigidbody.AddForce(Vector2.up * m_sm.JumpPower, ForceMode2D.Impulse);
         }
     }

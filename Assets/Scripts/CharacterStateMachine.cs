@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +13,10 @@ public class CharacterStateMachine : MonoBehaviour
     [field: SerializeField] public float RotationIncrement { get; private set; } = 90;
     [field: SerializeField] public float JumpPower { get; private set; } = 15;
     [field: SerializeField] public float RotationAngle { get; private set; } = 90.0f;
+    [field: SerializeField] public GameObject footStepsGameObject { get; set; }
     public IState CurrentState { get; private set; }
-    
-    
+
+
     private float m_currentSpeed;
     public bool m_isInAir = false;
     private Transform m_objectToPlaceIn;
@@ -25,8 +27,12 @@ public class CharacterStateMachine : MonoBehaviour
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
-        
+
         BuildStateMachine();
+    }
+
+    private void Start()
+    {
         InitializeState(m_States[0]);
     }
 
@@ -47,7 +53,7 @@ public class CharacterStateMachine : MonoBehaviour
     private void Update()
     {
         TryChangeState();
-        
+
         CurrentState.OnUpdate();
     }
 
@@ -63,7 +69,7 @@ public class CharacterStateMachine : MonoBehaviour
         foreach (var state in m_States)
         {
             if (state == CurrentState || !state.CanEnter()) continue;
-            
+
             ChangeState(state);
             return;
         }
@@ -79,6 +85,17 @@ public class CharacterStateMachine : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D other)
     {
         m_isInAir = false;
+
+        if (other.gameObject.layer == 6)
+        {
+            SoundManager.Instance.PlayStickSound();
+            Debug.Log("stick");
+        }
+        else
+        {
+            SoundManager.Instance.PlayHitSound();
+            Debug.Log("hit");
+        }
     }
 
     public void OnCollisionExit2D(Collision2D other)
@@ -88,6 +105,16 @@ public class CharacterStateMachine : MonoBehaviour
 
     public bool CheckIfInAir()
     {
+        if (Physics.Raycast(transform.position + (Vector3.down * 0.5f), Vector3.down, 0.5f))
+        {
+            return false;
+        }
+
         return m_isInAir;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position + (Vector3.down * 0.5f), Vector3.down * 0.5f);
     }
 }

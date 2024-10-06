@@ -24,16 +24,16 @@ public class SoundManager : MonoBehaviour
     
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); 
             InitializeAudioSources();
             PlayBackgroundMusic();
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
     
@@ -124,6 +124,7 @@ public class SoundManager : MonoBehaviour
     
     private void PlaySFX(AudioClip clip)
     {
+        _sfxSource.pitch = Random.Range(0.75f, 1.25f);
             _sfxSource.PlayOneShot(clip);
 
     }
