@@ -14,8 +14,7 @@ namespace UI
             Label gameOverLabel = root.Q<Label>("GameOverText");
             Button mainMenuButton = root.Q<Button>("MainMenu");
 
-            //TODO
-            //Get gameover status from gamemanager
+            //TODO Get gameover status from gamemanager
             
             if (m_victory)
             {
@@ -31,8 +30,7 @@ namespace UI
 
         void OnMainMenu()
         {
-            //TODO
-            //Change scene to main menu
+            //TODO Change scene to main menu
         }
     }
 }

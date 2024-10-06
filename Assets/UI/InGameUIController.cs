@@ -19,9 +19,8 @@ namespace UI
 
         void Update()
         {
-            //TODO
-            //Get score from gamemanager
-            //Get numberused from gamemanager
+            //TODO Get score from gamemanager
+            //TODO Get numberused from gamemanager
             
             m_scoreLabel.text = ((int)m_score).ToString();
             m_unmberUsedLabel.text = ((int)m_numberUsed).ToString();
