@@ -45,13 +45,20 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Inputs\Data\InputTypeEnum.cs" />
     <Compile Include="Assets\UI\MainMenuUIController.cs" />
+    <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
+    <Compile Include="Assets\Scripts\Inputs\IInputConsumer.cs" />
     <Compile Include="Assets\UI\InGameUIController.cs" />
     <Compile Include="Assets\Scripts\InAirState.cs" />
+    <Compile Include="Assets\Scripts\Inputs\InputBufferHandler.cs" />
     <Compile Include="Assets\Scripts\MovingState.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainState.cs" />
+    <Compile Include="Assets\Scripts\Inputs\Data\InputData.cs" />
     <Compile Include="Assets\Scripts\IState.cs" />
     <Compile Include="Assets\Scripts\StickedState.cs" />
+    <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\UI\GameOverUIController.cs" />
     <Compile Include="Assets\UI\PauseMenuUIController.cs" />
     <Compile Include="Assets\Scripts\CharacterStateMachine.cs" />
