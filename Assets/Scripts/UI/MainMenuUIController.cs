@@ -18,13 +18,13 @@ namespace UI
             quitButton.clicked += OnQuitGame;
         }
         
-        private void OnStartGame()
+        public void OnStartGame()
         {
             Debug.Log("Loading");
-            SceneManager.LoadSceneAsync("LevelPrototype");
+            SceneManager.LoadSceneAsync("InGame with Sound");
         }
         
-        private void OnQuitGame()
+        public void OnQuitGame()
         {
             Application.Quit();
         }
