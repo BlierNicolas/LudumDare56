@@ -10,6 +10,7 @@ public class TetraminosGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> m_mouths = new();
     [SerializeField] private List<GameObject> m_tendrils = new();
 
+    public GameObject m_gary;
     public GameObject m_currentTetramino;
     [SerializeField] private GameObject m_tetraminoList;
 
@@ -86,5 +87,10 @@ public class TetraminosGenerator : MonoBehaviour
         }
 
         featureGenerator.AssignTendrils(tendrilList);
+    }
+
+    public void SpawnGary()
+    {
+        Instantiate(m_gary, m_tetraminoList.transform);
     }
 }

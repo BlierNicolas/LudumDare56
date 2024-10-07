@@ -114,5 +114,16 @@ namespace Managers
         {
             SceneManager.LoadScene("DefeatScene", LoadSceneMode.Single);
         }
+
+        public void SpawnGary()
+        {
+            if (_generator.m_currentTetramino)
+            {
+                Destroy(_generator.m_currentTetramino);
+                m_canSpawn = false;
+            }
+            
+            _generator.SpawnGary();
+        }
     }
 }
