@@ -5,6 +5,9 @@ using UnityEngine;
 public class InAirState : BaseState
 {
     private Vector2 m_direction;
+    private float m_timer = 0.0f;
+
+    private const float TURN_TIMER_COOLDOWN = 0.2f;
 
     public InAirState(CharacterStateMachine sm) : base(sm) {}
     
@@ -15,8 +18,8 @@ public class InAirState : BaseState
 
     public override void OnEnter()
     {
-
         Debug.Log("inAir");
+        m_timer = 0.0f;
     }
 
     public override bool CanExit()
@@ -28,6 +31,10 @@ public class InAirState : BaseState
     {
         RotateCharacter();
         m_direction = GetInputDirection();
+
+        m_timer -= Time.deltaTime;
+        
+        
     }
     
     public override void OnFixedUpdate()
@@ -41,6 +48,11 @@ public class InAirState : BaseState
     {
         var zAngle = (InputManager.Instance.GetInput(EInputType.Rotate_Right) ? m_sm.RotationAngle : 0) - 
                      (InputManager.Instance.GetInput(EInputType.Rotate_Left) ? -m_sm.RotationAngle : 0);
+        
+        if (zAngle > 0)
+        {
+            m_timer = TURN_TIMER_COOLDOWN;
+        }
 
         Vector3 angle = new Vector3(0, 0, zAngle);
         
@@ -53,8 +65,8 @@ public class InAirState : BaseState
         {
             EInputType.Walk_Left => true,
             EInputType.Walk_Right => true,
-            EInputType.Rotate_Left => true,
-            EInputType.Rotate_Right => true, //should probably add a timer so that we don't spin at 60 times per seconds
+            EInputType.Rotate_Left => m_timer <= 0,
+            EInputType.Rotate_Right => m_timer <= 0, //should probably add a timer so that we don't spin at 60 times per seconds
             _ => false
         };
     }

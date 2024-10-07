@@ -14,7 +14,7 @@ public class CharacterStateMachine : MonoBehaviour
     [field: SerializeField] public float JumpPower { get; private set; } = 15;
     [field: SerializeField] public float RotationAngle { get; private set; } = 90.0f;
     [field: SerializeField] public GameObject footStepsGameObject { get; set; }
-    public IState CurrentState { get; private set; }
+    public BaseState CurrentState { get; private set; }
 
 
     private float m_currentSpeed;

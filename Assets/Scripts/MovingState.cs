@@ -6,17 +6,7 @@ public class MovingState : BaseState
     private Vector2 m_direction;
     
     public MovingState(CharacterStateMachine sm) : base(sm) { }
-
-    // public override void OnEnter()
-    // {
-    //     m_sm.footStepsGameObject.SetActive(true);
-    // }
-    //
-    // public override void OnExit()
-    // {
-    //     m_sm.footStepsGameObject.SetActive(false);
-    // }
-
+    
     public override bool CanEnter()
     {
         return !m_sm.CheckIfInAir();
