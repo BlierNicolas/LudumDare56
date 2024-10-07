@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TetraminosGenerator : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class TetraminosGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> m_mouths = new();
     [SerializeField] private List<GameObject> m_tendrils = new();
 
-    private GameObject m_tetramino;
+    public GameObject m_currentTetramino;
     [SerializeField] private GameObject m_tetraminoList;
 
     // Update is called once per frame
@@ -24,9 +25,9 @@ public class TetraminosGenerator : MonoBehaviour
     public void GenerateTetramino()
     {
         var index = Random.Range(0, m_shapes.Count);
-        m_tetramino = Instantiate(m_shapes[index], m_tetraminoList.transform);
+        m_currentTetramino = Instantiate(m_shapes[index], m_tetraminoList.transform);
 
-        var featureGenerator = m_tetramino.GetComponent<FeatureGenerator>();
+        var featureGenerator = m_currentTetramino.GetComponent<FeatureGenerator>();
 
         GenerateFeatures(featureGenerator);
         GenerateTendrils(featureGenerator);

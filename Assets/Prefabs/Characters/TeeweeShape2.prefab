@@ -776,13 +776,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e1e9f8edfef1f49aeeae999e9d2499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <footStepsGameObject>k__BackingField: {fileID: 1231490542676036756}
   <Speed>k__BackingField: 30
   <DragForce>k__BackingField: 20
-  <RotationIncrement>k__BackingField: 90
   <JumpPower>k__BackingField: 15
   <RotationAngle>k__BackingField: 90
-  <footStepsGameObject>k__BackingField: {fileID: 1231490542676036756}
-  m_isInAir: 0
+  <RotationCooldown>k__BackingField: 0.25
+  <RotationSpeed>k__BackingField: 400
+  <ShowDebugLogState>k__BackingField: 0
 --- !u!66 &4491757227025903118
 CompositeCollider2D:
   m_ObjectHideFlags: 0

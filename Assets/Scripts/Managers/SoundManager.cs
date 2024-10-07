@@ -64,8 +64,7 @@ public class SoundManager : MonoBehaviour
     
     private void PlayBackgroundMusic()
     {
-            _musicSource.Play();
-
+        _musicSource.Play();
     }
     
     public void PlayJumpSound()

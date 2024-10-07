@@ -294,7 +294,6 @@ MonoBehaviour:
   m_lockedItems: {fileID: 1571618853}
   _generator: {fileID: 29354696}
   _void: {fileID: 0}
-  isPlayerActive: 0
 --- !u!4 &246845970
 Transform:
   m_ObjectHideFlags: 0
@@ -350,6 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a567fb78b8fa646a895ae306cd9b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_generator: {fileID: 29354696}
   <m_availableInputActions>k__BackingField:
   - <InputType>k__BackingField: 1
     <Key>k__BackingField: 97
@@ -359,10 +359,10 @@ MonoBehaviour:
     <ExpirationTime>k__BackingField: 0
   - <InputType>k__BackingField: 3
     <Key>k__BackingField: 113
-    <ExpirationTime>k__BackingField: 0.5
+    <ExpirationTime>k__BackingField: 0.1
   - <InputType>k__BackingField: 4
     <Key>k__BackingField: 101
-    <ExpirationTime>k__BackingField: 0.5
+    <ExpirationTime>k__BackingField: 0.1
   - <InputType>k__BackingField: 5
     <Key>k__BackingField: 32
     <ExpirationTime>k__BackingField: 0.5

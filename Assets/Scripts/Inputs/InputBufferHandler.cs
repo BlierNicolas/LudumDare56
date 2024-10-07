@@ -5,17 +5,22 @@ using UnityEngine;
 
 namespace Inputs
 {
-    /* RequireComponent(typeof(StateMachine))*/
     public class InputBufferHandler : MonoBehaviour
     {
-        /*[SerializeField] private StateMachine m_sm = null;*/
+        [SerializeField] private TetraminosGenerator m_generator = null;
         [field: SerializeField] public List<InputData> m_availableInputActions { get; private set; }
         [SerializeField] private bool m_showDebugInputs = false;
         
         private List<InputData> m_inputBuffer = new();
+        private CharacterStateMachine m_sm = null;
         
         private void Update()
         {
+            if (m_sm == null)
+            {
+                m_sm = m_generator.m_currentTetramino?.GetComponent<CharacterStateMachine>();
+            }
+
             ResetInputsState();
             CheckForPlayerInputs();
             ProcessBufferedInputs();
@@ -35,7 +40,7 @@ namespace Inputs
 
             for (int i = 0; i < m_inputBuffer.Count; i++)
             {
-                if (Time.time <= m_inputBuffer[i].GetTimestamp() /*&& test.CanConsumeInput(m_inputBuffer[i].InputType)*/)
+                if (Time.time <= m_inputBuffer[i].GetTimestamp() && m_sm.CurrentState.CanConsumeInput(m_inputBuffer[i].InputType))
                 {
                     if (m_showDebugInputs)
                     {
