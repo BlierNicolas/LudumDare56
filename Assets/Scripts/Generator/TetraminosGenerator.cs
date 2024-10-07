@@ -91,6 +91,8 @@ public class TetraminosGenerator : MonoBehaviour
 
     public void SpawnGary()
     {
-        Instantiate(m_gary, m_tetraminoList.transform);
+        var garry = Instantiate(m_gary, m_tetraminoList.transform);
+
+        m_currentTetramino = garry;
     }
 }
