@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Managers
 {
@@ -22,7 +23,8 @@ namespace Managers
         //public bool isPlayerActive = false;
 
         [SerializeField] private TMP_Text scoreText;
-        [SerializeField] private TMP_Text tetraminoUsedText;
+
+        [SerializeField] private GameObject spawnGary;
 
         public float m_score { get; private set; } = 0f;
         public float m_tetraminos { get; private set; } = 0f;
@@ -55,22 +57,21 @@ namespace Managers
                 OnPauseGame();
             }
 
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                if (m_spawnPoint.transform.childCount > 0)
-                {
-                    var child = m_spawnPoint.transform.GetChild(0);
-                    Destroy(child.GetComponent<CharacterStateMachine>());
-                    m_spawnPoint.transform.DetachChildren();
-                    child.transform.SetParent(m_lockedItems.transform, false);
-                }
-            }
+            //if (Input.GetKeyDown(KeyCode.P))
+            //{
+            //    if (m_spawnPoint.transform.childCount > 0)
+            //    {
+            //        var child = m_spawnPoint.transform.GetChild(0);
+            //        Destroy(child.GetComponent<CharacterStateMachine>());
+            //        m_spawnPoint.transform.DetachChildren();
+            //        child.transform.SetParent(m_lockedItems.transform, false);
+            //    }
+            //}
         }
 
         private void LateUpdate()
         {
-            scoreText.text = "Score: " + m_score;
-            tetraminoUsedText.text = "Tetraminos used: " + m_tetraminos;
+            scoreText.text = "Score: " + m_tetraminos;
         }
 
         public void OnPauseGame()
@@ -91,6 +92,14 @@ namespace Managers
         {
             if (m_canSpawn)
             {
+                if (m_spawnPoint.transform.childCount > 0)
+                {
+                    var child = m_spawnPoint.transform.GetChild(0);
+                    Destroy(child.GetComponent<CharacterStateMachine>());
+                    m_spawnPoint.transform.DetachChildren();
+                    child.transform.SetParent(m_lockedItems.transform, false);
+                }
+
                 _generator.GenerateTetramino();
                 StartCoroutine(Timer());
             }
@@ -117,6 +126,8 @@ namespace Managers
 
         public void SpawnGary()
         {
+            Destroy(spawnGary);
+
             if (_generator.m_currentTetramino)
             {
                 Destroy(_generator.m_currentTetramino);

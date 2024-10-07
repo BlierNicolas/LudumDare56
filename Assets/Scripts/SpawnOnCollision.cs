@@ -8,10 +8,13 @@ public class SpawnOnCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.TryGetComponent<CharacterStateMachine>(out var stateMachine))
+        if (other.gameObject.layer == 6)
         {
-            Destroy(stateMachine);
-            GameManager.Instance.SpawnNextTetramino();
+            if (other.gameObject.TryGetComponent<CharacterStateMachine>(out var stateMachine))
+            {
+                Destroy(stateMachine);
+                GameManager.Instance.SpawnNextTetramino();
+            }
         }
     }
 }
