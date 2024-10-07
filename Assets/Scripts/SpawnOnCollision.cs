@@ -11,7 +11,6 @@ public class SpawnOnCollision : MonoBehaviour
         if (other.gameObject.TryGetComponent<CharacterStateMachine>(out var stateMachine))
         {
             Destroy(stateMachine);
-            GameManager.Instance.isPlayerActive = false;
             GameManager.Instance.SpawnNextTetramino();
         }
     }

@@ -308,6 +308,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9019511008677308420, guid: e47daa5dbd221574eb65788e45d51e58,
         type: 3}
+      propertyPath: <RotationSpeed>k__BackingField
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019511008677308420, guid: e47daa5dbd221574eb65788e45d51e58,
+        type: 3}
       propertyPath: <footStepsGameObject>k__BackingField
       value: 
       objectReference: {fileID: 8457964881340659052}

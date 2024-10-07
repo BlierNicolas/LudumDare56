@@ -6,24 +6,24 @@ using UnityEngine;
 public class CharacterStateMachine : MonoBehaviour
 {
     public Rigidbody2D Rigidbody { get; private set; }
-
-    private Collider m_collisionGroundChecker;
+    [field: SerializeField] public GameObject footStepsGameObject { get; private set; }
+    
 
     [field: SerializeField] public float Speed { get; private set; } = 30.0f;
     [field: SerializeField] public float DragForce { get; private set; } = 20.0f;
-    [field: SerializeField] public float RotationIncrement { get; private set; } = 90;
     [field: SerializeField] public float JumpPower { get; private set; } = 15;
     [field: SerializeField] public float RotationAngle { get; private set; } = 90.0f;
-    [field: SerializeField] public GameObject footStepsGameObject { get; set; }
+    [field: SerializeField] public float RotationCooldown { get; private set; } = 0.25f;
+    [field: SerializeField] public float RotationSpeed { get; private set; } = 400.0f;
     public BaseState CurrentState { get; private set; }
-    private bool _hasSpawnedAnotherTetramino = false;
+    private List<BaseState> m_States = new List<BaseState>();
+    
+    private bool m_hasSpawnedAnotherTetramino = false;
 
     private float m_currentSpeed;
-    public bool m_isInAir = false;
-    private Transform m_objectToPlaceIn;
-    private List<BaseState> m_States = new List<BaseState>();
-
-    public bool ShowDebugLogState { get; private set; } = false;
+    private bool m_isInAir = false;
+    
+    [field: SerializeField] public bool ShowDebugLogState { get; private set; } = false;
 
     private void Awake()
     {
@@ -35,7 +35,6 @@ public class CharacterStateMachine : MonoBehaviour
     private void Start()
     {
         InitializeState(m_States[0]);
-        GameManager.Instance.isPlayerActive = true;
     }
 
     private void BuildStateMachine()
@@ -91,12 +90,11 @@ public class CharacterStateMachine : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             SoundManager.Instance.PlayStickSound();
-            if (!_hasSpawnedAnotherTetramino)
+            if (!m_hasSpawnedAnotherTetramino)
             {
-                GameManager.Instance.isPlayerActive = false;
                 Destroy(GetComponent<CharacterStateMachine>());
                 GameManager.Instance.SpawnNextTetramino();
-                _hasSpawnedAnotherTetramino = true;
+                m_hasSpawnedAnotherTetramino = true;
             }
         }
         else

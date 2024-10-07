@@ -10,12 +10,11 @@ namespace Managers
     {
         public static GameManager Instance { get; private set; }
         [SerializeField] private GameObject m_pauseScreen;
-
         [SerializeField] private GameObject m_spawnPoint;
         [SerializeField] private GameObject m_lockedItems;
         [SerializeField] private TetraminosGenerator _generator;
         [SerializeField] private VoidEater _void;
-        public bool isPlayerActive = false;
+        //public bool isPlayerActive = false;
 
         public float m_score { get; private set; } = 0f;
 
@@ -77,6 +76,5 @@ namespace Managers
         {
             _generator.GenerateTetramino();
         }
-        
     }
 }
