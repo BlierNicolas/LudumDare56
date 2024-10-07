@@ -294,6 +294,8 @@ MonoBehaviour:
   m_lockedItems: {fileID: 1571618853}
   _generator: {fileID: 29354696}
   _void: {fileID: 0}
+  scoreText: {fileID: 426466963}
+  tetraminoUsedText: {fileID: 1685498303}
 --- !u!4 &246845970
 Transform:
   m_ObjectHideFlags: 0
