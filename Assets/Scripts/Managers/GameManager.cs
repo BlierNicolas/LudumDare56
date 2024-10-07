@@ -104,5 +104,26 @@ namespace Managers
 
             m_canSpawn = true;
         }
+
+        public void ShowWinScreen()
+        {
+            SceneManager.LoadScene("VictoryScene", LoadSceneMode.Single);
+        }
+
+        public void ShowLoseScreen()
+        {
+            SceneManager.LoadScene("DefeatScene", LoadSceneMode.Single);
+        }
+
+        public void SpawnGary()
+        {
+            if (_generator.m_currentTetramino)
+            {
+                Destroy(_generator.m_currentTetramino);
+                m_canSpawn = false;
+            }
+            
+            _generator.SpawnGary();
+        }
     }
 }
