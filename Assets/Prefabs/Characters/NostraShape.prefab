@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 8817807553890073226}
   - component: {fileID: 983782764590722308}
   - component: {fileID: 9019511008677308420}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NostraShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,6 +292,7 @@ MonoBehaviour:
   <RotationIncrement>k__BackingField: 90
   <JumpPower>k__BackingField: 15
   <RotationAngle>k__BackingField: 90
+  <footStepsGameObject>k__BackingField: {fileID: 0}
   m_isInAir: 0
 --- !u!1 &8675218788866901742
 GameObject:

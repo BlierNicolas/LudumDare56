@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 5097800610638954999}
   - component: {fileID: 1352324879985888197}
   - component: {fileID: 7739568609930453870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RickyShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
