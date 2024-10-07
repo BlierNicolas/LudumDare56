@@ -7,12 +7,54 @@
     <list default="true" id="cec1bcde-0ae9-446a-8bcb-cb1ffc714de3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare56/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DefeatScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DefeatScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InGame with Sound.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InGame with Sound.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VictoryScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VictoryScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InGame with Sound.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InGame with Sound.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Damus_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Damus_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Damus_goo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Damus_goo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gary_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gary_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gary_goo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gary_goo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Hero_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Hero_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Hero_goo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Hero_goo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/Defeat_menu.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/Defeat_menu.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/Main_menu.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/Main_menu.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/Pause_Menu.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/Pause_Menu.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/Play_Button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/Play_Button.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/Quit_Button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/Quit_Button.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/Replay_Button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/Replay_Button.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/Score_Square.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/Score_Square.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/Victory_menu.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/Victory_menu.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Menu/menu_button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Menu/menu_button.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Nostra_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Nostra_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Nostra_goo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Nostra_goo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ricky_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ricky_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Ricky_goo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Ricky_goo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Rocky_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Rocky_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Rocky_goo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Rocky_goo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Smashboy_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Smashboy_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Smashboy_goo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Smashboy_goo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Teewy_body.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Teewy_body.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Teewy_goo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Teewy_goo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tendril1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Tendril1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tendril2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Tendril2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tendril3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Tendril3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tendril4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Tendril4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/eye1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/eye1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/eye2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/eye2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/eye3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/eye3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/eye4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/eye4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/eye5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/eye5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/eye6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/eye6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/eye7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/eye7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/eye8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/eye8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/mouth1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/mouth1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/mouth2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/mouth2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/mouth3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/mouth3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/mouth4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/mouth4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/mouth5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/mouth5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/mouth6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/mouth6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/mouth7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/mouth7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/mouth8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/mouth8.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LudumDare56.sln" beforeDir="false" afterPath="$PROJECT_DIR$/LudumDare56.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,26 +80,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Alexandre",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Alexandre&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\m\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\m\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\m\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\m\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\m\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\m\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe" />
