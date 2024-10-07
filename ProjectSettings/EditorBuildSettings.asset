@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuPrototype.unity
     guid: 4d311515af7305c4fbf2049cd3c45c1c
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/InGame with Sound.unity
     guid: 6a631ed02e940ee4f985d777f0024b74
   - enabled: 1
     path: Assets/Scenes/VictoryScene.unity

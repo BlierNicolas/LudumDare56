@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
     
     public void LoadGame()
     {
-        Application.LoadLevel("GameScene");
+        Application.LoadLevel("InGame with Sound");
     }
 
     public void Quit()
