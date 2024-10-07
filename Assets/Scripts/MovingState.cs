@@ -1,4 +1,5 @@
 using Inputs.Data;
+using Managers;
 using UnityEngine;
 
 public class MovingState : BaseState
@@ -6,7 +7,7 @@ public class MovingState : BaseState
     private Vector2 m_direction;
     
     public MovingState(CharacterStateMachine sm) : base(sm) { }
-    
+
     public override bool CanEnter()
     {
         return !m_sm.CheckIfInAir();

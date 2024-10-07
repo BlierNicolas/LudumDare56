@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1;">
-        <ui:Label tabindex="-1" text="Pause" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PauseText" style="align-self: center; justify-content: center; font-size: 100px; top: 300px;" />
-        <ui:Button text="Resume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Resume" style="top: 500px; align-items: center; align-self: center; font-size: 48px;" />
-        <ui:Button text="Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MainMenu" style="top: 600px; align-items: center; align-self: center; font-size: 48px;" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: column; align-items: auto; justify-content: center; left: 0;">
+        <ui:Label tabindex="-1" text="Pause" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PauseText" style="align-self: center; justify-content: flex-end; font-size: 174px; top: -10%; align-items: flex-start; color: rgb(255, 211, 0); -unity-text-align: upper-center; height: 249px; width: 542px; text-overflow: clip;" />
+        <ui:Button text="Resume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Resume" style="top: 0; align-items: center; align-self: center; font-size: 48px; background-color: rgb(152, 218, 149);" />
+        <ui:Button text="Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MainMenu" style="top: 10%; align-items: center; align-self: center; font-size: 48px; -unity-text-align: upper-center; background-color: rgb(150, 210, 250);" />
     </ui:VisualElement>
 </ui:UXML>

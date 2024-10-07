@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 8292226470873155982}
   - component: {fileID: 698147226721670255}
   - component: {fileID: 2737474927421969933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmashboyShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
