@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8748260257739809795}
   - component: {fileID: 5026077886587211461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gary_goo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3834348619735461468}
   - component: {fileID: 1928924178053316533}
   - component: {fileID: 7532399964315898648}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3979147752672296480}
   - component: {fileID: 6170906098699701571}
   - component: {fileID: 1346051014006242376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gary_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03342104, y: -0.0083553195}
+  m_Offset: {x: -0.032110214, y: -0.30575806}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -294,5 +294,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9639468, y: 2.5822368}
+  m_Size: {x: 1.0767784, y: 1.8362082}
   m_EdgeRadius: 0

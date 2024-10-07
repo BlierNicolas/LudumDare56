@@ -75,4 +75,6 @@ MonoBehaviour:
   - {fileID: 1420678183682584017, guid: 9b0322edbc5e73b4b8a4ac0c4ef21f63, type: 3}
   - {fileID: 6637982493281780415, guid: 8d48e80cbdb35de4bb7298f5e2c5eb22, type: 3}
   - {fileID: 8426473986722521054, guid: 92280714ef2a6c647a7dfa027f5ee680, type: 3}
+  m_gary: {fileID: 4062344919429415004, guid: af66f0773aaa4bb478ade4224a50bda5, type: 3}
+  m_currentTetramino: {fileID: 0}
   m_tetraminoList: {fileID: 0}
