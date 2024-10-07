@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 public class CharacterStateMachine : MonoBehaviour
@@ -15,7 +16,7 @@ public class CharacterStateMachine : MonoBehaviour
     [field: SerializeField] public float RotationAngle { get; private set; } = 90.0f;
     [field: SerializeField] public GameObject footStepsGameObject { get; set; }
     public IState CurrentState { get; private set; }
-
+    private bool _hasSpawnedAnotherTetramino = false;
 
     private float m_currentSpeed;
     public bool m_isInAir = false;
@@ -34,6 +35,7 @@ public class CharacterStateMachine : MonoBehaviour
     private void Start()
     {
         InitializeState(m_States[0]);
+        GameManager.Instance.isPlayerActive = true;
     }
 
     private void BuildStateMachine()
@@ -89,7 +91,13 @@ public class CharacterStateMachine : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             SoundManager.Instance.PlayStickSound();
-            Debug.Log("stick");
+            if (!_hasSpawnedAnotherTetramino)
+            {
+                GameManager.Instance.isPlayerActive = false;
+                Destroy(GetComponent<CharacterStateMachine>());
+                GameManager.Instance.SpawnNextTetramino();
+                _hasSpawnedAnotherTetramino = true;
+            }
         }
         else
         {
@@ -101,6 +109,7 @@ public class CharacterStateMachine : MonoBehaviour
     public void OnCollisionExit2D(Collision2D other)
     {
         m_isInAir = true;
+
     }
 
     public bool CheckIfInAir()

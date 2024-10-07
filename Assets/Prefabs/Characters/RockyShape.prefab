@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8221345822866279757}
   - component: {fileID: 762059090165562080}
   - component: {fileID: 7855862891531906327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RockyShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}

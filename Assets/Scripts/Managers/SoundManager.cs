@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SoundManager : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip _buttonPressSound;
     [SerializeField] private AudioClip _gameOverSound;
     [SerializeField] private AudioClip _victorySound;
+    [FormerlySerializedAs("_failureSound")] [SerializeField] private AudioSource _failureAudioSource;
+    [SerializeField] private AudioSource _hitAudioSource;
+    [SerializeField] private AudioSource _stickAudioSource;
     
     private void Awake()
     {
@@ -69,10 +73,6 @@ public class SoundManager : MonoBehaviour
         PlaySFX(_jumpSound);
     }
     
-    /*public void PlayWalkSound()
-    {
-        PlaySFX(_walkSound);
-    }*/
     public void PlayWalkSound()
     {
         if (!walkSource.isPlaying && _walkSound != null)
@@ -82,12 +82,14 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayHitSound()
     {
-        PlaySFX(_hitSound);
+        _hitAudioSource.pitch = Random.Range(0.5f, 1.5f);
+        _hitAudioSource.PlayOneShot(_hitSound);
     }
     
     public void PlayStickSound()
     {
-        PlaySFX(_stickSound);
+        _stickAudioSource.pitch = Random.Range(0.5f, 1.5f);
+        _stickAudioSource.PlayOneShot(_stickSound);
     }
     
     public void PlayButtonPressSound()
@@ -95,9 +97,15 @@ public class SoundManager : MonoBehaviour
         PlaySFX(_buttonPressSound);
     }
     
-    public void PlayGameOverSound()
+    public void PlayFailureSound()
     {
-        PlaySFX(_gameOverSound);
+        _failureAudioSource.pitch = Random.Range(0.65f, 1.35f);
+        
+        if (_failureAudioSource.isPlaying)
+        {
+            return;
+        }
+        _failureAudioSource.PlayOneShot(_gameOverSound);
     }
     
     public void PlayVictorySound()

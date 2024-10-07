@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 8343836821006288653}
   - component: {fileID: 3157814072774373329}
   - component: {fileID: 1030405817048652505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TeeweeShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}

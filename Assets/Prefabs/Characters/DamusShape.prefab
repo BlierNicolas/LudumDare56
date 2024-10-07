@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6919746118488141125}
   - component: {fileID: 4895428024568581765}
   - component: {fileID: 4186488879275689876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DamusShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
