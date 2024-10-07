@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
     public void LoadMainMenu()
     {
-        Application.LoadLevel("MainMenu");
+        SceneManager.LoadSceneAsync("MainMenu");
     }
     
     public void LoadGame()
     {
-        Application.LoadLevel("InGame with Sound");
+        SceneManager.LoadSceneAsync("InGame with Sound");
     }
 
     public void Quit()
