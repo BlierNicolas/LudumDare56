@@ -21,7 +21,7 @@ public class TetraminosGenerator : MonoBehaviour
         }
     }
 
-    private void GenerateTetramino()
+    public void GenerateTetramino()
     {
         var index = Random.Range(0, m_shapes.Count);
         m_tetramino = Instantiate(m_shapes[index], m_tetraminoList.transform);

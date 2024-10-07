@@ -7,24 +7,27 @@ using UnityEngine.SceneManagement;
 namespace Managers
 {
     public class GameManager : MonoBehaviour
-    { 
+    {
         public static GameManager Instance { get; private set; }
         [SerializeField] private GameObject m_pauseScreen;
 
         [SerializeField] private GameObject m_spawnPoint;
         [SerializeField] private GameObject m_lockedItems;
+        [SerializeField] private TetraminosGenerator _generator;
+        [SerializeField] private VoidEater _void;
+        public bool isPlayerActive = false;
 
         public float m_score { get; private set; } = 0f;
-    
-        private void Awake() 
-        { 
-            if (Instance != null && Instance != this) 
-            { 
-                Destroy(this); 
-            } 
-            else 
-            { 
-                Instance = this; 
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
             }
 
             m_score = 1000f;
@@ -34,6 +37,7 @@ namespace Managers
         {
             Time.timeScale = 1;
             m_pauseScreen.SetActive(false);
+            SpawnNextTetramino();
         }
 
         private void Update()
@@ -42,6 +46,7 @@ namespace Managers
             {
                 OnPauseGame();
             }
+
             if (Input.GetKeyDown(KeyCode.P))
             {
                 if (m_spawnPoint.transform.childCount > 0)
@@ -53,7 +58,7 @@ namespace Managers
                 }
             }
         }
-        
+
         public void OnPauseGame()
         {
             bool isPaused = Time.timeScale == 0;
@@ -67,5 +72,11 @@ namespace Managers
             Debug.Log("Loading");
             SceneManager.LoadSceneAsync("MainMenuPrototype");
         }
+
+        public void SpawnNextTetramino()
+        {
+            _generator.GenerateTetramino();
+        }
+        
     }
 }
