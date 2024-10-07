@@ -15,6 +15,10 @@ namespace Managers
         [SerializeField] private GameObject m_lockedItems;
         [SerializeField] private TetraminosGenerator _generator;
         [SerializeField] private VoidEater _void;
+
+        private bool m_canSpawn = true;
+        private float m_timer = 2.0f;
+        
         //public bool isPlayerActive = false;
 
         [SerializeField] private TMP_Text scoreText;
@@ -85,8 +89,20 @@ namespace Managers
 
         public void SpawnNextTetramino()
         {
-            _generator.GenerateTetramino();
-            m_tetraminos++;
+            if (m_canSpawn)
+            {
+                _generator.GenerateTetramino();
+                StartCoroutine(Timer());
+            }
+        }
+
+        public IEnumerator Timer()
+        {
+            m_canSpawn = false;
+            
+            yield return new WaitForSeconds(m_timer);
+
+            m_canSpawn = true;
         }
 
         public void ShowWinScreen()
