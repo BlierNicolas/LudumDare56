@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 
@@ -20,7 +18,12 @@ public class VoidEater : MonoBehaviour
                 StartCoroutine(ResetSpawnFlagAfterDelay(2f));
             }
         }
-        
+
+        if (other.gameObject.layer == 7) //Gary
+        {
+            GameManager.Instance.ShowLoseScreen();
+        }
+
         Destroy(other.gameObject);
         
         if (_isBottomVoid)

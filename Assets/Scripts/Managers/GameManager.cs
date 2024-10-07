@@ -88,5 +88,15 @@ namespace Managers
             _generator.GenerateTetramino();
             m_tetraminos++;
         }
+
+        public void ShowWinScreen()
+        {
+            SceneManager.LoadScene("VictoryScene", LoadSceneMode.Single);
+        }
+
+        public void ShowLoseScreen()
+        {
+            SceneManager.LoadScene("DefeatScene", LoadSceneMode.Single);
+        }
     }
 }
