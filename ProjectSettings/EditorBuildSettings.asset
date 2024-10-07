@@ -8,10 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LevelPrototype.unity
     guid: 6d3241a4f81dfd146ab5bc5a970a2154
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenuPrototype.unity
     guid: 4d311515af7305c4fbf2049cd3c45c1c
   - enabled: 1
-    path: Assets/Scenes/InGame with Sound.unity
+    path: Assets/Scenes/GameScene.unity
     guid: 6a631ed02e940ee4f985d777f0024b74
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: 6d40d731d70c0524e988cf369067793a
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8fc316666996ba44892c6293b2424226
+  - enabled: 1
+    path: Assets/Scenes/DefeatScene.unity
+    guid: 5ecf48bd5d4e92b4698ebf55a9bbc616
   m_configObjects: {}
