@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,7 +21,11 @@ namespace Managers
         
         //public bool isPlayerActive = false;
 
+        [SerializeField] private TMP_Text scoreText;
+        [SerializeField] private TMP_Text tetraminoUsedText;
+
         public float m_score { get; private set; } = 0f;
+        public float m_tetraminos { get; private set; } = 0f;
 
         private void Awake()
         {
@@ -60,6 +65,12 @@ namespace Managers
                     child.transform.SetParent(m_lockedItems.transform, false);
                 }
             }
+        }
+
+        private void LateUpdate()
+        {
+            scoreText.text = "Score: " + m_score;
+            tetraminoUsedText.text = "Tetraminos used: " + m_tetraminos;
         }
 
         public void OnPauseGame()
